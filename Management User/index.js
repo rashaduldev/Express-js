@@ -23,6 +23,7 @@ app.get('/users',(req,res)=>{
 })
 
 app.post('/users',(req,res)=>{
+  console.log("Api Successfully hiting");
   console.log(req.body);
 })
 // app.post('/users',(req,res)=>{
