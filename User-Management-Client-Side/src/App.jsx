@@ -11,13 +11,24 @@ function App() {
     .then(data=>setUsers(data));
   },[])
 
+  const handleSubmitUser=(event)=>{
+    event.preventDefault();
+    const form=event.target;
+    const name=form.name.value;
+    const email=form.email.value;
+    const newUser={name,email}
+
+
+    console.log(newUser);
+  }
+
   return (
     <>
       <h1>User Management System</h1>
       <h1>Number of users {users.length}</h1>
-      <form action="">
-      <input type="text"  placeholder='Name'/> <br />
-      <input type="email"  placeholder='Email'/><br />
+      <form onSubmit={handleSubmitUser} action="">
+      <input type="text" name='name'  placeholder='Name'/> <br />
+      <input type="email" name='email'  placeholder='Email'/><br />
       <input type="submit" />
       </form>
 <div>

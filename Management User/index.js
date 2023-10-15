@@ -22,6 +22,13 @@ app.get('/users',(req,res)=>{
   res.send(users)
 })
 
+app.post('/users',(req,res)=>{
+  console.log(req.body);
+})
+// app.post('/users',(req,res)=>{
+//   console.log(req.body);
+// })
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
