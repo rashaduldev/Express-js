@@ -26,7 +26,10 @@ function App() {
     })
     .then(res=>res.json())
     .then(data=>console.log(data));
-
+   
+    const Newusers=[...users,data];
+    setUsers(Newusers);
+    form.reset();
 
     console.log(newUser);
   }
@@ -42,7 +45,7 @@ function App() {
       </form>
 <div>
   {
-    users.map(user=> <p>{user.id}. {user.name}:{user.email}</p>)
+    users.map(user=> <p key={user.id}> {user.id}. {user.name}:{user.email}</p>)
   }
 </div>
 
