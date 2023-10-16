@@ -19,7 +19,13 @@ function App() {
       body: JSON.stringify(user)
     })
     .then((response) => response.json())
-    .then(data=>console.log(data))
+    .then(data=>{
+      console.log(data);
+      if (data.insertedId) {
+        alert("Added Succesfully!");
+        form.reset();
+      }
+    })
   };
 
   return (
